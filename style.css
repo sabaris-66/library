@@ -1,0 +1,41 @@
+html,
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1,h2,h3,b{
+    margin: 0;
+    padding: 0;
+}
+
+svg{
+    width: 25px;
+    height: auto;
+}
+
+label,
+button,
+select,
+summary,
+[type=radio],
+[type=submit],
+[type=checkbox] {
+    cursor: pointer;
+}
+
+button{
+    padding: 0;
+    margin: 0;
+}
+
+/* style sheet */
+.title{
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
