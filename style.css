@@ -1,3 +1,10 @@
+button,
+input,
+select{
+    border: 0;
+    margin: 0;
+}
+
 html,
 body{
     height: 100%;
@@ -38,13 +45,25 @@ body{
     background-color: darkgray;
 }
 
-.title{
+.header, .addBook{
     display: flex;
     gap: 1vw;
     justify-content: center;
     align-items: center;
     background-color: black;
     color: white;
+}
+
+.addBook{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: darkgray;
+}
+
+.addBook button{
+    font-size: larger;
+    font-weight: bold;
+    width: 20vw;
 }
 
 .container{
@@ -58,12 +77,13 @@ body{
 
 .card{
     width: 28vw;
-    height: fit-content;
     display: flex;
+    height: 12vw;
     flex-direction: column;
     justify-content: center;
     background-color: whitesmoke;
     padding: 10px;
+    overflow: auto;
 }
 
 .content{
@@ -101,9 +121,40 @@ body{
     padding-top: 1vw;
 }
 
-.cardButton{
+.cardButton, .addBook button,
+.close, .confirm{
     padding: 1vw;
     background-color: black;
     color: white;
     border-radius: 20px;
+}
+
+dialog[open]{
+    border-radius: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.addDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.addDetails select,
+.addDetails input{
+    width: 40%;
 }

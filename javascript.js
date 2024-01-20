@@ -94,7 +94,7 @@ function displayLibraryBooks(book){
     buttons.append(remove);
 
     changeStatus(book, read);
-    removeBook(book, remove);
+    removeBook(book, remove, card);
 }
 
 // function to change read status
@@ -116,30 +116,49 @@ function changeStatus(book, read){
     });
 }
 
-function removeBook(book, remove){
+function removeBook(book, remove, card){
     remove.addEventListener('click', () => {
         book.remove = true;
         myLibrary = myLibrary.filter(bookObject => bookObject.remove != true);
+        container.removeChild(card);
     });
     
 }
 
 
-// const omniscientReade = new Book('Omniscient Reader Viewpoint', 'Sing Shong', 1500, 'On Progress');
-// const superGen = new Book('Super Gene', 'Twelve-Winged Dark Seraphim', 3462, 'Read');
+// Dialog Interaction 
+const addBook = document.querySelector('.addBook');
+const showDialog = document.querySelector('dialog');
+const submit = document.querySelector('.confirm');
+const close = document.querySelector('.close')
+const bookTitle = document.querySelector('#title');
+const bookAuthor = document.querySelector('#author');
+const bookChapterCount = document.querySelector('#chapters');
+const bookStatus = document.querySelector('#status');
 
-// // add books to myLibrary
-// addBookToLibrary(omniscientReade);
-// addBookToLibrary(superGen);
+addBook.addEventListener('click', () => {
+    showDialog.showModal();
+});
 
-// const omniscientRead = new Book('Omniscient Reader Viewpoint', 'Sing Shong', 1500, 'On Progress');
+// temporary.addEventListener('change', () => {
+//     console.log(temporary.value);
+// });
 
-// // add books to myLibrary
-// addBookToLibrary(omniscientRead);
-
-// const omniscientRea = new Book('Omniscient Reader Viewpoint', 'Sing Shong', 1500, 'On Progress');
-// addBookToLibrary(omniscientRea);
-
-// const omniscientRe = new Book('Omniscient Reader Viewpoint', 'Sing Shong', 1500, 'On Progress');
-// addBookToLibrary(omniscientRe);
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(bookTitle.value !== "" && bookAuthor.value !== "" &&
+       bookChapterCount.value !== "" && bookStatus.value !== ""){
+        const newBook = new Book(bookTitle.value, 
+                                 bookAuthor.value,
+                                 bookChapterCount.value,
+                                 bookStatus.value);
+        addBookToLibrary(newBook);
+        bookTitle.value = "";
+        bookAuthor.value = "";
+        bookChapterCount.value = "";
+        bookStatus.value = "Not Read";
+        
+    }
+    showDialog.close();
+});
 

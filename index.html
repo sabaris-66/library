@@ -8,10 +8,42 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="title">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>library</title><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+    <div class="header">
         <h1>LIBRARY</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>library</title><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+    </div>
+
+    <!-- dialog -->
+    <dialog class="newBookDetails">
+        <form action="">
+            <div class="addDetails">
+                <label for="title">Book Title:</label>
+                <input type="text" id="title" name="bookTitle" required>
+            </div>
+            <div class="addDetails">
+                <label for="author">Author Name:</label>
+                <input type="text" id="author" name="bookAuthor" required>
+            </div>
+            <div class="addDetails">
+                <label for="chapters">No of Chapters:</label>
+                <input required type="number" id="chapters" name="bookChapterCount" >
+            </div>
+            <div class="addDetails">
+                <label for="status">Status:</label>
+                <select id="status" class="bookStatus" name="bookStatus">
+                    <option value="Read">Read</option>
+                    <option value="Not Read">Not Read</option>
+                    <option value="On Progress">On Progress</option>
+                </select>
+            </div>
+            <div>
+                <button value="cancel" class="close" formmethod="dialog">CANCEL</button>
+                <button id="confirmBtn" class="confirm" formmethod="dialog">ADD</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div class="addBook">
+        <button>+ADD BOOK</button>
     </div>
     <div class="container">
     </div>
