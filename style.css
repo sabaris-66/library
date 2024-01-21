@@ -76,9 +76,9 @@ body{
 }
 
 .card{
-    width: 28vw;
+    width: 400px;
     display: flex;
-    height: 12vw;
+    height: 180px;
     flex-direction: column;
     justify-content: center;
     background-color: whitesmoke;
